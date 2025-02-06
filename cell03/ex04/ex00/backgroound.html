@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>การปรับแต่งสไตล์ด้วย jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* CSS สำหรับ body และ button */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <button id="changeColorBtn">กดเพื่อเปลี่ยนสีพื้นหลัง</button>
+
+    <script>
+        $(document).ready(function () {
+            // การจัดการสไตล์ของ body และปุ่มด้วย jQuery
+            $("body").css({
+                "display": "flex",
+                "justify-content": "center",
+                "align-items": "center",
+                "height": "100vh",
+                "background-color": "white",
+                "font-family": "Arial, sans-serif"
+            });
+
+            $("button").css({
+                "padding": "10px 20px",
+                "font-size": "16px",
+                "cursor": "pointer",
+                "border": "none",
+                "border-radius": "5px",
+                "background-color": "#007BFF",
+                "color": "white"
+            });
+
+            // การเปลี่ยนสีปุ่มเมื่อ hover
+            $("button").hover(function () {
+                $(this).css("background-color", "#0056b3");
+            }, function () {
+                $(this).css("background-color", "#007BFF");
+            });
+
+            // ฟังก์ชันเปลี่ยนสีพื้นหลังเป็นสีสุ่มเมื่อคลิกปุ่ม
+            $('#changeColorBtn').click(function () {
+                const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+                $('body').css('background-color', randomColor);
+            });
+        });
+    </script>
+</body>
+</html>

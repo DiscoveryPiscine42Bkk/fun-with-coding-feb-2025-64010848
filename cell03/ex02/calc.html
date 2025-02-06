@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+    <style>
+        /* Basic styling for layout */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        input, select {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Basic Calculator</h1>
+    <div>
+        <input id="leftNumber" type="text" placeholder="Enter left number">
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input id="rightNumber" type="text" placeholder="Enter right number">
+        <br>
+        <button onclick="calculate()">Try me!</button>
+    </div>
+
+    <script>
+        // Function to calculate the result based on inputs and operator
+        function calculate() {
+            const leftNumber = parseInt(document.getElementById("leftNumber").value);
+            const rightNumber = parseInt(document.getElementById("rightNumber").value);
+            const operator = document.getElementById("operator").value;
+
+            // Validation for positive integer inputs
+            if (isNaN(leftNumber) || isNaN(rightNumber) || leftNumber < 0 || rightNumber < 0) {
+                alert("Error :(");
+                return;
+            }
+
+            // Handling division or modulo by zero
+            if ((operator === "/" || operator === "%") && rightNumber === 0) {
+                alert("It's over 9000!");
+                console.log("It's over 9000!");
+                return;
+            }
+
+            // Perform the calculation based on the operator
+            let result;
+            switch (operator) {
+                case "+":
+                    result = leftNumber + rightNumber;
+                    break;
+                case "-":
+                    result = leftNumber - rightNumber;
+                    break;
+                case "*":
+                    result = leftNumber * rightNumber;
+                    break;
+                case "/":
+                    result = leftNumber / rightNumber;
+                    break;
+                case "%":
+                    result = leftNumber % rightNumber;
+                    break;
+                default:
+                    result = "Invalid operation";
+            }
+
+            // Show result in alert and log in console
+            alert("Result: " + result);
+            console.log("Result: " + result);
+        }
+
+        // Show "Please, use me..." alert every 30 seconds
+        setInterval(() => {
+            alert("Please, use me...");
+        }, 30000);
+    </script>
+</body>
+</html>
