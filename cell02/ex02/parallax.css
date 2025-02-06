@@ -1,0 +1,41 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.parallax {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg1 {
+    background-image: url('https://notjustok.com/wp-content/uploads/2024/08/20240823_003624-scaled.jpg'); /* เปลี่ยนเป็น URL ของรูปภาพที่ต้องการ */
+}
+
+.bg2 {
+    background-image: url('https://static0.givemesportimages.com/wordpress/wp-content/uploads/2024/04/mixcollage-16-apr-2024-01-27-pm-2188.jpg'); /* เปลี่ยนเป็น URL ของรูปภาพที่ต้องการ */
+}
+
+.text {
+    color: white;
+    font-size: 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.content {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 50px;
+    font-size: 1.5rem;
+}
